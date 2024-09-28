@@ -1,6 +1,10 @@
 from django.shortcuts import render
 
-def mainpage(request):
-    return render(request, 'mainpage/main.html')
+def homepage(request):
+    return render(request, 'homepage/HomePage.html')
+def contatos(request):
+    return render(request, 'contatos/Contato.html')
+def form(request):
+    return render(request, 'formulario/Forms.html')
 
 # Create your views here.
