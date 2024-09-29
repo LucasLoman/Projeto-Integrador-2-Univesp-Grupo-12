@@ -1,11 +1,11 @@
 {% extends 'Universal.html' %}
-
+{% load static %}
 {% block conteudo %}
     
     <title>Formulário</title>
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='FormsCSS.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='Modos/Claro/ClaroForms.css')}}" id="temas">
+    <link rel="stylesheet" href="{% static 'css/FormsCSS.css'%}">
+    <link rel="stylesheet" href="{% static 'Modos/Claro/ClaroForms.css'%}" id="temas">
 
 <!-- Modo Escuro/claro -->
 
@@ -15,10 +15,10 @@
     const botao = document.querySelector(".muda_tema");
     const tema = document.querySelector("#temas");
     botao.addEventListener("click", function() {
-        if (tema.getAttribute("href") == "{{ url_for ('static', filename='Modos/Claro/ClaroForms.css')}}") {
-            tema.href = "{{ url_for ('static', filename='Modos/Escuro/EscuroForms.css')}}";
+        if (tema.getAttribute("href") == "{%static 'Modos/Claro/ClaroForms.css'%}") {
+            tema.href = "{% static 'Modos/Escuro/EscuroForms.css'%}";
         } else {
-            tema.href = "{{ url_for ('static', filename='Modos/Claro/ClaroForms.css')}}";
+            tema.href = "{%static 'Modos/Claro/ClaroForms.css'%}";
         }
     });
     </script>
@@ -66,7 +66,7 @@
          <br>   Como uma empresa familiar, prezamos pela tradição, por relações sólidas e um ambiente harmonioso, valorizamos ética, transparência e dedicação em tudo o que fazemos, assim buscamos excelência e crescimento contínuo. Se junte a equipe e podemos alcançar novos patamares na AutoIta!
 
         <div class="flavor_logo">
-            <img src="{{ url_for ('static', filename='Imagens/logo_autoita-semfundo.png')}}" alt="Logo_Autoita">
+            <img src="{%static 'Imagens/logo_autoita-semfundo.png'%}" alt="Logo_Autoita">
         </div>
         </div>
     </div>

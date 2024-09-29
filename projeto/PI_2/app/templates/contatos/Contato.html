@@ -1,11 +1,11 @@
 {% extends 'Universal.html' %}
-
+{% load static %}
 {% block conteudo %}
     
     <title>Contato</title>
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='ContatoCSS.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='Modos/Claro/ClaroContato.css')}}" id="temas">
+    <link rel="stylesheet" href="{%static 'css/ContatoCSS.css'%}">
+    <link rel="stylesheet" href="{%static 'Modos/Claro/ClaroContato.css'%}" id="temas">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <!-- Modo Escuro/claro -->
@@ -16,10 +16,10 @@
     const botao = document.querySelector(".muda_tema");
     const tema = document.querySelector("#temas");
     botao.addEventListener("click", function() {
-        if (tema.getAttribute("href") == "{{ url_for ('static', filename='Modos/Claro/ClaroContato.css')}}") {
-            tema.href = "{{ url_for ('static', filename='Modos/Escuro/EscuroContato.css')}}";
+        if (tema.getAttribute("href") == "{%static 'Modos/Claro/ClaroContato.css'%}") {
+            tema.href = "{%static 'Modos/Escuro/EscuroContato.css'%}";
         } else {
-            tema.href = "{{ url_for ('static', filename='Modos/Claro/ClaroContato.css')}}";
+            tema.href = "{%static 'Modos/Claro/ClaroContato.css'%}";
         }
     });
     </script>
